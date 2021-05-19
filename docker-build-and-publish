@@ -4,14 +4,14 @@ set -eu
 
 VERSION=$(cat VERSION)
 
-if docker manifest inspect maguirebrendan/random:$VERSION > /dev/null 2>&1 ; then
+if docker manifest inspect earnestresearch/random:$VERSION > /dev/null 2>&1 ; then
     echo "Image with version $VERSION already exists"
     exit 1
 fi
 
-docker build -t maguirebrendan/random:$VERSION .
-docker build -t maguirebrendan/random:latest .
+docker build -t earnestresearch/random:$VERSION .
+docker build -t earnestresearch/random:latest .
 
-docker login --username maguirebrendan
-docker push maguirebrendan/random:$VERSION
-docker push maguirebrendan/random:latest
+docker login --username earnestresearch
+docker push earnestresearch/random:$VERSION
+docker push earnestresearch/random:latest

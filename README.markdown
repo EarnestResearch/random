@@ -8,7 +8,7 @@ The service can be run as a Docker container or as a Python process.
 
 ### Docker Container
 ```
-docker run --pull always --publish 5000:5000 maguirebrendan/random:latest
+docker run --pull always --publish 5000:5000 earnestresearch/random:latest
 ```
 
 ### Python Process
