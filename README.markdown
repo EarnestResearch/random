@@ -8,7 +8,7 @@ The service can be run as a Docker container or as a Python process.
 
 ### Docker Container
 ```
-docker run --pull always --publish 5000:5000 earnestresearch/random:latest
+docker run --pull always --publish 5000:5000 earnestresearch/take-home-exercise-random-api:latest
 ```
 
 ### Python Process
@@ -31,4 +31,5 @@ curl 'http://localhost:5000/random/default/choice?value=3&value=5&value=7'
 
 ## Publishing the Docker Image
 1. Bump the version in the [VERSION file](VERSION)
-1. `./docker-build-and-publish`
+1. Use a [Docker Hub account](https://hub.docker.com/signup) which is a member of the [Earnest Research organisation](https://hub.docker.com/orgs/earnestresearch)
+1. `./docker-build-and-publish <Docker Hub username>`

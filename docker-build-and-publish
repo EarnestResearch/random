@@ -2,16 +2,18 @@
 
 set -eu
 
+DOCKER_HUB_USERNAME=$1
+
 VERSION=$(cat VERSION)
 
-if docker manifest inspect earnestresearch/random:$VERSION > /dev/null 2>&1 ; then
+if docker manifest inspect earnestresearch/take-home-exercise-random-api:$VERSION > /dev/null 2>&1 ; then
     echo "Image with version $VERSION already exists"
     exit 1
 fi
 
-docker build -t earnestresearch/random:$VERSION .
-docker build -t earnestresearch/random:latest .
+docker build -t earnestresearch/take-home-exercise-random-api:$VERSION .
+docker build -t earnestresearch/take-home-exercise-random-api:latest .
 
-docker login --username earnestresearch
-docker push earnestresearch/random:$VERSION
-docker push earnestresearch/random:latest
+docker login --username $DOCKER_HUB_USERNAME
+docker push earnestresearch/take-home-exercise-random-api:$VERSION
+docker push earnestresearch/take-home-exercise-random-api:latest
